@@ -7,18 +7,27 @@
 using namespace std;
 int main()
 {
-   string a;
-   char b;
-   int n = 0;
-   getline(cin,a);
-   while(n < a.length())
+   int a,add,l,s;
+   double n = 1.0,av;
+   if(cin >> a)
    {
-    b = a[n];
-    b = tolower(b);
-    if(b == 'a' || b == 'e' || b == 'i' || b == 'o' || b == 'u')
-    cout << n << " ";
+   add = a;
+   l = a;
+   s = a;
+   }
+   while(cin >> a)
+   {
+    add = add + a;
+    if(a < s)
+    s = a;
+    if(a > l)
+    l = a;
     n++;
    }
+   av = add / n;
+   int d = l - s;
+   cout << av << " " << l << " " << s << " " << d;
+
 
     return 0;
 }
